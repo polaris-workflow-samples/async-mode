@@ -21,7 +21,8 @@ jobs:
         polaris_server_url: ${{ vars.POLARIS_SERVER_URL }}
         polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        polaris_assessment_types: "SAST"
+        polaris_assessment_types: "SAST,SCA"
+        detect_args: "--detect.source.path=${{ github.workspace }}/nodejs-npm"
         polaris_waitForScan: false
 
       
